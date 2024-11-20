@@ -1,5 +1,8 @@
 <?php # LOGIN HELPER FUNCTIONS.
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 # Function to load specified or default URL.
 function load($page = 'login.php')
 {
@@ -10,9 +13,10 @@ function load($page = 'login.php')
     $url = rtrim($url, '/\\');
     $url .= '/' . $page;
 
-    # Execute redirect then quit. 
-    header("Location: $url");
-    exit();
+
+     # Execute redirect then quit. 
+     header("Location: $url");
+     exit();
 }
 
 # Function to check email address and password. 
@@ -38,7 +42,7 @@ function validate($link, $email = '', $pwd = '')
     # On success retrieve id, username, from 'new_users' table.
     if (empty($errors)) {
         $q = "SELECT id, username FROM new_users WHERE email='$e' AND password=SHA2('$p',256)";
-        $r = mysqli_query($link, query: $q);
+        $r = mysqli_query($link,  $q);
         if (@mysqli_num_rows($r) == 1) {
             $row = mysqli_fetch_array($r, MYSQLI_ASSOC);
             return array(true, $row);

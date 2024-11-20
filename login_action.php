@@ -1,6 +1,4 @@
 <?php # PROCESS LOGIN ATTEMPT.
-
-
 # Check form submitted.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     # Open database connection.
@@ -19,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['id'] = $data['id'];
         $_SESSION['username'] = $data['username'];
         $_SESSION['email'] = $data['email'];
-        load(page: 'home.php');
+        load('home.php');
     }
     # Or on failure set errors.
     else {
@@ -31,5 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 # Continue to display login page on failure.
+echo "Login Failed";
 include('login.php');
 
