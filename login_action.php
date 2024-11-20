@@ -3,10 +3,8 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     # Open database connection.
     require('connect_db.php');
-
     # Get connection, load, and validate functions.
     require('login_tools.php');
-
     # Check login.
     list($check, $data) = validate($link, $_POST['email'], $_POST['password']);
 
@@ -23,12 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     else {
         $errors = $data;
     }
-
     # Close database connection.
     mysqli_close($link);
 }
-
-# Continue to display login page on failure.
 echo "Login Failed";
 include('login.php');
-
