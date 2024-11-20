@@ -1,7 +1,7 @@
 <?php
 # Access session.
 session_start();
-
+include('includes/nav.php');
 # Redirect if not logged in.
 if (!isset($_SESSION['id'])) {
     require('login_tools.php');
@@ -23,3 +23,7 @@ if (!isset($_SESSION['id'])) {
 </body>
 
 </html>
+
+<?php
+include('includes/footer.php');
+?>
