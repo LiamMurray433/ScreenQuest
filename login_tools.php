@@ -1,8 +1,8 @@
 <?php # LOGIN HELPER FUNCTIONS.
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
 # Function to load specified or default URL.
 function load($page = 'login.php')
 {
@@ -13,10 +13,9 @@ function load($page = 'login.php')
     $url = rtrim($url, '/\\');
     $url .= '/' . $page;
 
-
-     # Execute redirect then quit. 
-     header("Location: $url");
-     exit();
+    # Execute redirect then quit. 
+    header("Location: $url");
+    exit();
 }
 
 # Function to check email address and password. 
