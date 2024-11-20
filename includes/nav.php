@@ -28,18 +28,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="create.php">Create <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="read.php">Read</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="update.php">Update</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="delete.php">Delete</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.php">Login</a>
                 </li>
@@ -51,6 +39,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="user_account.php">Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="movie_listing.php">Movie Listings</a>
                 </li>
             </ul>
         </div>
