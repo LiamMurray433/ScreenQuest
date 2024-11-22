@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include 'includes/nav.php';
 ?>
 
@@ -6,7 +8,7 @@ include 'includes/nav.php';
 <h1>Add movie to listing</h1>
 <form action="create.php" method="post">
     <!-- input box for item name  -->
-    <label for="name">Movie Name:</label>
+    <label for="movie_title">Movie title:</label>
     <input type="text"
         id="movie_title"
         class="form-control"
@@ -70,22 +72,20 @@ include 'includes/nav.php';
 
     <!-- input for further info -->
     <label for="further_info">Further Info:</label>
-    <textarea type="text"
-        id="further_info"
+    <textarea id="further_info"
         class="further_info"
         name="further_info"
-        required
-        value="<?php if (isset($_POST['further_info'])) echo $_POST['further_info']; ?>">
+        required><?php if (isset($_POST['further_info'])) echo $_POST['further_info']; ?>
     </textarea>
 
     <!-- input for release -->
-    <label for="release">release:</label>
+    <label for="d">release:</label>
     <input type="text"
-        id="release"
-        class="release"
-        name="release"
+        id="d"
+        class="d"
+        name="d"
         required
-        value="<?php if (isset($_POST['release'])) echo $_POST['release']; ?>">
+        value="<?php if (isset($_POST['d'])) echo $_POST['d']; ?>">
 
     <!-- input box for image path -->
     <label for="img">Image:</label>
@@ -97,7 +97,7 @@ include 'includes/nav.php';
         value="<?php if (isset($_POST['img'])) echo $_POST['img']; ?>">
 
     <!-- input for preview -->
-    <label for="release">preview:</label>
+    <label for="preview">preview:</label>
     <input type="text"
         id="preview"
         class="preview"
@@ -128,98 +128,111 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     # Connect to the database.
     require('connect_db.php');
 
+    echo '<pre>';
+    print_r($_POST);
+    echo '</pre>';
+
+    $result = mysqli_query($link, "SHOW TABLES");
+    if ($result) {
+        while ($row = mysqli_fetch_row($result)) {
+            echo $row[0] . '<br>';
+        }
+    } else {
+        echo '<p>Database error: ' . mysqli_error($link) . '</p>';
+    }
+
+
+
     # Initialize an error array.
     $errors = array();
 
-    # Check for item name .
+    # Check for movie title .
     if (empty($_POST['movie_title'])) {
         $errors[] = 'Enter the movie title.';
     } else {
-        $n = mysqli_real_escape_string($link, trim($_POST['movie_title']));
+        $title = mysqli_real_escape_string($link, trim($_POST['movie_title']));
     }
 
-    # Check for a item decription.
+    # Check for genre.
     if (empty($_POST['genre'])) {
         $errors[] = 'Enter the movie genre.';
     } else {
-        $d = mysqli_real_escape_string($link, trim($_POST['genre']));
+        $genre = mysqli_real_escape_string($link, trim($_POST['genre']));
     }
 
-    # Check for a item image.
+    # Check for ager ating.
     if (empty($_POST['age_rating'])) {
         $errors[] = 'Enter the age rating.';
     } else {
-        $img = mysqli_real_escape_string($link, trim($_POST['age_rating']));
+        $age = mysqli_real_escape_string($link, trim($_POST['age_rating']));
     }
 
-    # Check for a item price.
+    # Check for showtime1.
     if (empty($_POST['show1'])) {
         $errors[] = 'Enter the 1st showing.';
     } else {
-        $p = mysqli_real_escape_string($link, trim($_POST['show1']));
+        $s1 = mysqli_real_escape_string($link, trim($_POST['show1']));
     }
 
-    # Check for a item price.
+    # Check for showtime2.
     if (empty($_POST['show2'])) {
         $errors[] = 'Enter the 2nd showing.';
     } else {
-        $p = mysqli_real_escape_string($link, trim($_POST['show2']));
+        $s2 = mysqli_real_escape_string($link, trim($_POST['show2']));
     }
-    # Check for a item price.
+    # Check for a showtime3.
     if (empty($_POST['show3'])) {
         $errors[] = 'Enter the 3rd showing.';
     } else {
-        $p = mysqli_real_escape_string($link, trim($_POST['show3']));
+        $s3 = mysqli_real_escape_string($link, trim($_POST['show3']));
     }
 
-    # Check for a item price.
+    # Check for a theatre.
     if (empty($_POST['theatre'])) {
         $errors[] = 'Enter the theatre.';
     } else {
-        $p = mysqli_real_escape_string($link, trim($_POST['theatre']));
+        $theatre = mysqli_real_escape_string($link, trim($_POST['theatre']));
     }
-    # Check for a item price.
+    # Check for a info.
     if (empty($_POST['further_info'])) {
         $errors[] = 'Enter some info.';
     } else {
-        $p = mysqli_real_escape_string($link, trim($_POST['further_info']));
+        $info = mysqli_real_escape_string($link, trim($_POST['further_info']));
     }
-    if (empty($_POST['release'])) {
-        $errors[] = 'Enter some release.';
+    if (empty($_POST['d'])) {
+        $errors[] = 'Enter a date.';
     } else {
-        $p = mysqli_real_escape_string($link, trim($_POST['release']));
+        $d = mysqli_real_escape_string($link, trim($_POST['d']));
     }
     if (empty($_POST['img'])) {
         $errors[] = 'Enter an img.';
     } else {
-        $p = mysqli_real_escape_string($link, trim($_POST['img']));
+        $img = mysqli_real_escape_string($link, trim($_POST['img']));
     }
     if (empty($_POST['preview'])) {
         $errors[] = 'Enter a preview.';
     } else {
-        $p = mysqli_real_escape_string($link, trim($_POST['preview']));
+        $preview = mysqli_real_escape_string($link, trim($_POST['preview']));
     }
     if (empty($_POST['mov_price'])) {
         $errors[] = 'Enter a price.';
     } else {
-        $p = mysqli_real_escape_string($link, trim($_POST['mov_price']));
+        $price = mysqli_real_escape_string($link, trim($_POST['mov_price']));
     }
-
-
 
     # On success data into my_table on database.
     if (empty($errors)) {
-        $q = "INSERT INTO products (item_name, item_desc, item_img, item_price) 
-	VALUES ('$n','$d', '$img', '$p' )";
-        $r = @mysqli_query($link, $q);
+        $q = "INSERT INTO movie_listings (movie_title, genre, age_rating, show1, show2, show3, theatre, further_info, d, img, preview, mov_price) 
+        VALUES ('$title', '$genre', '$age', '$s1', '$s2', '$s3', '$theatre', '$info', '$d', '$img', '$preview', '$price')";
+
+        $r = mysqli_query($link, $q);
+        // Check if the query was successful
         if ($r) {
             echo '<p>New record created successfully</p>';
+        } else {
+            // Display the error message if the query fails
+            echo '<p>Error inserting record: ' . mysqli_error($link) . '</p>';
         }
-
-        # Close database connection.
-        mysqli_close($link);
-
-        exit();
     }
 
     # Or report errors.
