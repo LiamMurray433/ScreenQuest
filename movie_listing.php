@@ -9,18 +9,15 @@ if (mysqli_num_rows($r) > 0) {
 
     while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
         echo '
-	
-    <div class="col-md-3 d-flex justify-content-center">
-    <div class="card" style="width: 18rem;">
-    <div class="card text-center">
-				
-    <img src=' . $row['img'] . ' alt="Movie" class="img-thumbnail bg-secondary">
-    <h5 class="card-title">' . $row['movie_title'] . '</h5>
-    <a href="movie.php?id=' . $row['movie_id'] . '" class="btn btn-secondary btn-block" role="button">
-    Book Now</a>
-    </div>
-</div>
-</div>  
+                <div class="card" style="width: 15rem;margin: 10px ">
+	 	<img src=' . $row['img'] . ' class="card-img-top" alt="T-Shirt">
+	  <div class="card-body">
+	   <h5 class="card-title text-center">' . $row['movie_title'] . '</h5>
+	   <p class="card-text text-center">' . $row['further_info'] . '</p>
+     </div>
+	  <ul class="list-group list-group-flush">
+	  </ul>
+	</div>
 	';
     }
     # Close database connection.
