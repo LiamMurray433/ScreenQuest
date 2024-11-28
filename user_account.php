@@ -1,5 +1,6 @@
 <?php
 # Access session.
+include('includes/nav.php');
 session_start();
 
 # Redirect if not logged in.
@@ -53,3 +54,4 @@ if (mysqli_num_rows($r) > 0) {
 
 		';
 }
+include('includes/footer.php');
