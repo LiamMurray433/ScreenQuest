@@ -1,7 +1,6 @@
 <?php
 include('includes/nav.php');
 ?>
-
 <!doctype html>
 <html lang="en">
 
@@ -104,7 +103,8 @@ include('includes/nav.php');
 			name=\" qty[{$row['movie_id']}]\" 
 			value=\" {$_SESSION['cart'][$row['movie_id']]['quantity']}\" 
 			aria-label=\"Recipient's username\" 
-			aria-describedby=\"basic-addon2\" readonly>
+			aria-describedby=\"basic-addon2\" 
+	readonly>
 				   <button class=\"btn btn-dark\"  onclick=\"increment()\">+</button>
 				   <script src=\"script.js\"></script>
 				</div>
@@ -169,7 +169,10 @@ include('includes/nav.php');
                 xhr.send("quantity=" + quantity + "&price=" + price);
             }
         </script>
+</body>
 
-        <?php
-        include('includes/footer.php');
-        ?>
+</html>
+
+<?php
+include('includes/footer.php');
+?>
