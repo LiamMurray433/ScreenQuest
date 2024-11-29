@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include('includes/nav.php');
 # Open database connection.
 require('connect_db.php');
@@ -15,10 +20,11 @@ if (mysqli_num_rows($r) > 0) {
                     <div class="card-body">
                         <h5 class="card-title text-center">' . $row['movie_title'] . '</h5>
                         <p class="card-text text-center">' . $row['further_info'] . '</p>
+                        <a href="movie.php?movie_id=' . $row['movie_id'] . '" class="btn btn-secondary btn-block" role="button">Book Now</a>
                     </div>
 	            </div>       
 	';
-    }          
+    }
     # Close database connection.
     mysqli_close($link);
 }
@@ -27,5 +33,5 @@ else {
     echo '<p>There are currently no movies showing.</p>
 	';
 }
-echo '</div>'; 
+echo '</div>';
 include('includes/footer.php');
