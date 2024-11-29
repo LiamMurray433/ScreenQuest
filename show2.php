@@ -140,7 +140,7 @@ include('includes/nav.php');
             echo '<div class="container">
 			<div class="alert alert-secondary" role="alert">
 			<h2>No reservations have been made.</h2>
-			<a href="home.php" class="alert-link">View What\'s On Now </a>
+			<a href="movie_listing.php" class="alert-link">View What\'s On Now </a>
 		</div>';
         }
         ?>
