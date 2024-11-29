@@ -5,6 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 include('includes/nav.php');
+include('includes/filter.php');
 # Open database connection.
 require('connect_db.php');
 # Retrieve movies from 'movie_listing' database table.
