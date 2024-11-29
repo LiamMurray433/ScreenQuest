@@ -82,7 +82,7 @@
 	=====    Search Result  =======
 	=================================== -->
     <div class="container">
-        <div id="txtHint">
+        <div id="">
 
-            <!-- Display Search -->
+
         </div>
