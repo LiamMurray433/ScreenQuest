@@ -50,6 +50,7 @@
 <!--  close head-->
 
 <body>
+    <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
         <a class="navbar-brand" href="#">Navbar with Filter Function</a>
         <form class="form-inline my-2 my-lg-0">
@@ -78,6 +79,7 @@
             </select>
         </form>
     </nav><!-- Close Navbar  -->
+    </div>
     <!--  =============================
 	=====    Search Result  =======
 	=================================== -->
