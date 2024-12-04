@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="nav-container">
         <nav class="navbar navbar-expand-lg custom-navbar">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">Screen Quest</a>
