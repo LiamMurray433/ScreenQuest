@@ -1,6 +1,6 @@
 <?php
 include('includes/nav.php');
-include('includes/filter.php')
+
 ?>
 
 <!doctype html>

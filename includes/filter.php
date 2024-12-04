@@ -56,7 +56,6 @@
                 <select class="form-control " id="exampleFormControlSelect2" name="users" onchange="showUser(this.value)">
                     <option value="">Select Movie:</option>
                     <?php
-                    ob_start();
                     # Open database connection.
                     require('connect_db.php');
                     # Retrieve movies from 'movie' database table.
@@ -65,18 +64,14 @@
                     if (mysqli_num_rows($r) > 0) {
                         # Display body section.
                         while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
-                            echo '
-					
-					<option value=' . $row['movie_id'] . '>' . $row['movie_title'] . '</option>';
+                            echo '<option value=' . $row['movie_id'] . '>' . $row['movie_title'] . '</option>';
                         }
                         # Close database connection.
                         mysqli_close($link);
                     }
-                    ob_end_flush();
                     ?>
                 </select>
             </form>
-
         </nav><!-- Close Navbar  -->
     </div>
 
