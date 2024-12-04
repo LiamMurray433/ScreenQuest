@@ -4,7 +4,7 @@ $q = intval($_GET['q']);
 # Open database connection.
 require('connect_db.php');
 if (!$link) {
-    die('Could not connect: ' . mysqli_error($link));
+	die('Could not connect: ' . mysqli_error($link));
 }
 //change database name 
 mysqli_select_db($link, "DATABASE NAME");
@@ -22,7 +22,7 @@ echo "
 
 while ($row = mysqli_fetch_array($result)) {
 
-    echo '<div class="container mt-5">
+	echo '<div class="container mt-5">
         <div class="row">
             <div class="col-md-4">
 				<iframe class="embed-responsive-item" src=' . $row['preview'] . ' 

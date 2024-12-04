@@ -20,7 +20,6 @@ if (mysqli_num_rows($r) > 0) {
                     <img src=' . $row['img'] . ' class="card-img-top" alt="T-Shirt">
                     <div class="card-body">
                         <h5 class="card-title text-center">' . $row['movie_title'] . '</h5>
-                        <p class="card-text text-center">' . $row['further_info'] . '</p>
                         <a href="movie.php?movie_id=' . $row['movie_id'] . '" class="btn btn-secondary btn-block" role="button">Book Now</a>
                     </div>
 	            </div>       

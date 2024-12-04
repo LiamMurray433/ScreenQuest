@@ -1,34 +1,55 @@
- <?php
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
-	include('includes/nav.php');
-	# DISPLAY COMPLETE LOGGED IN PAGE.
-	# Access session.
-	session_start();
-	# Redirect if not logged in.
-	if (!isset($_SESSION['id'])) {
-		require('login_tools.php');
-		load();
-	}
+<?php
+# Access session.
+session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+include('includes/nav.php');
+include('includes/filter.php');
+# DISPLAY COMPLETE LOGGED IN PAGE.
 
-	# Get passed product id and assign it to a variable.
-	if (isset($_GET['movie_id'])) $movie_id = $_GET['movie_id'];
+?>
+<!DOCTYPE html>
+<html lang="en">
 
-	# Open database connection.
-	require('connect_db.php');
-	# Retrieve selective item data from 'movie' database table. 
-	$q = "SELECT * FROM movie_listings WHERE movie_id = $movie_id";
-	$r = mysqli_query($link, $q);
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>CRUD Practice!</title>
+	<link rel="stylesheet" href="main.css">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+		integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+		crossorigin="anonymous">
+</head>
 
-	if (mysqli_num_rows($r) == 1) {
-		$row = mysqli_fetch_array($r, MYSQLI_ASSOC);
+<?php
+# Redirect if not logged in.
+if (!isset($_SESSION['id'])) {
+	require('login_tools.php');
+	load();
+}
 
-		# Check if cart already contains one movie id.
-		if (isset($_SESSION['cart'][$movie_id])) {
-			# Add one more of this product.
-			$_SESSION['cart'][$movie_id]['quantity']++;
-			echo '
+# Get passed product id and assign it to a variable.
+if (isset($_GET['movie_id'])) $movie_id = $_GET['movie_id'];
+
+# Open database connection.
+require('connect_db.php');
+# Retrieve selective item data from 'movie' database table. 
+$q = "SELECT * FROM movie_listings WHERE movie_id = $movie_id";
+$r = mysqli_query($link, $q);
+
+if (mysqli_num_rows($r) == 1) {
+	$row = mysqli_fetch_array($r, MYSQLI_ASSOC);
+
+	# Check if cart already contains one movie id.
+	if (isset($_SESSION['cart'][$movie_id])) {
+		# Add one more of this product.
+		$_SESSION['cart'][$movie_id]['quantity']++;
+		echo '
       <div class="container mt-5">
         <div class="row">
             <div class="col-md-4">
@@ -85,11 +106,11 @@
 		</div>
 		</div>
 		';
-		} else {
-			# Or add one of this product to the cart.
-			$_SESSION['cart'][$movie_id] = array('quantity' => 1, 'price' => $row['mov_price']);
+	} else {
+		# Or add one of this product to the cart.
+		$_SESSION['cart'][$movie_id] = array('quantity' => 1, 'price' => $row['mov_price']);
 
-			echo '
+		echo '
       <div class="container mt-5">
         <div class="row">
             <div class="col-md-4">
@@ -146,9 +167,9 @@
 		</div>
 		</div>
 		';
-		}
 	}
-	# Close database connection.
-	mysqli_close($link);
-	include('includes/footer.php');
-	?>
+}
+# Close database connection.
+mysqli_close($link);
+include('includes/footer.php');
+?>

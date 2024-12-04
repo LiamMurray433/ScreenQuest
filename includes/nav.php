@@ -7,20 +7,19 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>CRUD Practice!</title>
-
+    <link rel="stylesheet" href="main.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
         crossorigin="anonymous">
-
 </head>
 
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg custom-navbar">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Screen Quest</a>
+                <a class="navbar-brand" href="index.php">Screen Quest</a>
                 <button class="navbar-toggler" type="button"
                     data-toggle="collapse"
                     data-target="#navbarNav"
@@ -31,24 +30,25 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                             <a class="nav-link" href="login.php">Login</a>
+                            <a class="nav-link" href="movie_listing.php">What's On</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="movie_listing.php">Coming Soon</a>
                         </li>
                     </ul>
                 </div>
             </div>
-        </nav>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="movie_listing.php">What's On</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="movie_listing.php">Coming Soon</a>
-                    </li>
-                </ul>
+            <div class="ml-auto d-flex">
+                <div class="nav-item">
+                    <a class="nav-link bi bi-person-fill custom-icon" href="user_account.php"></a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link bi bi-cart-fill custom-icon" href="show1.php"></a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link bi bi-box-arrow-right custom-icon" href="logout.php"></a>
+                </div>
             </div>
         </nav>
     </div>
 </body>
-    

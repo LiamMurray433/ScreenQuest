@@ -1,0 +1,67 @@
+/* Colour palette
+    #000F08 Black
+    #8A3033 Red
+    #EEF0F2 white
+    #508991 teal
+    #648381 greenish
+*/
+
+
+/* UNIVERSAL PROPERTIES */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+
+    background-color: #EEF0F2;
+    color: #000F08;
+}
+
+.custom-navbar {
+    color: #EEF0F2;
+    background-color: #8A3033;
+}
+
+.custom-icon {
+    color: #EEF0F2;
+
+}
+
+.navbar-brand {
+    color: #EEF0F2;
+}
+
+.navbar-brand:hover {
+    /* Change to your desired hover color */
+    color: #000F08;
+    /* Smooth transition (optional) */
+    transition: color 0.3s;
+
+}
+
+.nav-link {
+    color: #EEF0F2;
+}
+
+.nav-link:hover {
+    /* Change to your desired hover color */
+    color: #000F08;
+    /* Smooth transition (optional) */
+    transition: color 0.3s;
+
+}
+
+.bi:hover {
+    /* Change to your desired hover color */
+    color: #000F08;
+    /* Smooth transition (optional) */
+    transition: color 0.3s;
+
+}
