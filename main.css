@@ -19,9 +19,16 @@
 
 body {
     font-family: 'Oswald', sans-serif;
-
     background-color: #EEF0F2;
     color: #000F08;
+    justify-content: center;
+    /* Horizontally center */
+    align-items: center;
+    /* Vertically center */
+}
+
+.nav-container {
+    width: 100%;
 }
 
 .custom-navbar {
@@ -64,4 +71,27 @@ body {
     /* Smooth transition (optional) */
     transition: color 0.3s;
 
+}
+
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    min-height: 100px;
+
+}
+
+.login-container {
+    padding: 10px;
+    width: 25%;
+    background-color: #8A3033;
+    border-radius: 20px;
+    border: 5px solid #000F08;
+    box-shadow: 5px 5px 5px 6px #000F08
+}
+
+.login-title {
+    text-align: center;
 }
