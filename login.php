@@ -15,6 +15,11 @@
         crossorigin="anonymous">
 </head>
 
+<?php
+include('includes/nav.php');
+include('includes/filter.php');
+?>
+
 <body>
     <div class="login-wrapper">
         <div class="login-container">

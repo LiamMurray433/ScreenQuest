@@ -33,7 +33,7 @@ body {
 
 .custom-navbar {
     color: #EEF0F2;
-    background-color: #8A3033;
+    background-color: #648381;
 }
 
 .custom-icon {
@@ -78,15 +78,16 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: 100px;
     min-height: 100px;
 
 }
 
 .login-container {
     padding: 10px;
-    width: 25%;
-    background-color: #8A3033;
+    width: 50%;
+    min-width: 300px;
+    background-color: #648381;
     border-radius: 20px;
     border: 5px solid #000F08;
     box-shadow: 5px 5px 5px 6px #000F08
