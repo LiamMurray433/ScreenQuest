@@ -17,7 +17,7 @@
 
 <body>
     <footer style="width: 100%; background-color: #8A3033; color: #ecf0f1; padding: 20px 0; text-align: center;">
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+        <div style="width: 100%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
             <div style="flex: 1 1 200px; text-align: left; margin: 10px;">
                 <h4 style="margin: 0; font-size: 18px;">About Us</h4>
                 <p style="margin: 5px 0; font-size: 14px; line-height: 1.5;">
