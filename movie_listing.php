@@ -11,7 +11,7 @@ require('connect_db.php');
 # Retrieve movies from 'movie_listing' database table.
 $q = "SELECT * FROM movie_listings";
 $r = mysqli_query($link, $q);
-echo '<div class="row justify-content-center">';
+echo '<div class="row justify-content-center" style="background-color:#000F08;">';
 if (mysqli_num_rows($r) > 0) {
     # Display body section.        
     while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {

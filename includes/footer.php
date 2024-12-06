@@ -15,7 +15,7 @@
         crossorigin="anonymous">
 </head>
 
-<body>
+
     <footer style="width: 100%; background-color: #8A3033; color: #ecf0f1; padding: 20px 0; text-align: center;">
         <div style="width: 100%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
             <div style="flex: 1 1 200px; text-align: left; margin: 10px;">
@@ -53,6 +53,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
