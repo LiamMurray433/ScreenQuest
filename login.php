@@ -17,27 +17,33 @@
 
 <?php
 include('includes/nav.php');
-include('includes/filter.php');
-?>
 
-<body>
-    <div class="login-wrapper">
-        <div class="login-container">
-            <h1 class="login-title">Login</h1>
-            <form action="login_action.php" method="post">
-                <div class="mb-3 form-input">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" placeholder="Email" name="email" required>
+?>
+<section class="vh-100" style="background-color: #EEF0F2;">
+    <div class="container py-5 h-100">
+        <form action="login_action.php" method="post">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+                            <h3 class="mb-5">Sign in</h3>
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                <input type="email" class="form-control form-control-lg" placeholder="Email" name="email" required>
+                                <label class="form-label" for="typeEmailX-2">Email</label>
+                            </div>
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                <input type="password" class="form-control form-control-lg" placeholder="password" name="password" required>
+                                <label class="form-label" for="typePasswordX-2">Password</label>
+                            </div>
+                            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block" style="background-color: #648381;" type="submit">Login</button>
+                            <hr class="my-4">
+                            <a href="register.php">Not a member? Sign up!!</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-3 form-input">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" placeholder="Password" name="password" required>
-                </div>
-                <br><br>
-                <input type="submit" value="Login">
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
-</body>
+</section>
 
 </html>
