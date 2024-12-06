@@ -173,7 +173,9 @@ include('includes/nav.php');
                 xhr.send("quantity=" + quantity + "&price=" + price);
             }
         </script>
-
-        <?php
-        include('includes/footer.php');
-        ?>
+    </div>
+</body>
+</html>
+<?php
+    include('includes/footer.php');
+?>
