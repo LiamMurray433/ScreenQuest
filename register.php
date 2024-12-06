@@ -1,5 +1,8 @@
 <?php # DISPLAY COMPLETE REGISTRATION PAGE.
 # Check form submitted.
+
+include('includes/nav.php');
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     # Connect to the database.
     require('connect_db.php');
@@ -11,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($_POST['username'])) {
         $errors[] = 'Enter your name.';
     } else {
-        $fn = mysqli_real_escape_string($link, trim($_POST['username']));
+        $un = mysqli_real_escape_string($link, trim($_POST['username']));
     }
 
 
@@ -21,6 +24,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $e = mysqli_real_escape_string($link, trim($_POST['email']));
     }
+
+    # Check for an email address:
+    if (empty($_POST['firstname'])) {
+        $errors[] = 'Enter your first name';
+    } else {
+        $fn = mysqli_real_escape_string($link, trim($_POST['firstname']));
+    }
+
+    # Check for an email address:
+    if (empty($_POST['surname'])) {
+        $errors[] = 'Enter your surname';
+    } else {
+        $sn = mysqli_real_escape_string($link, trim($_POST['surname']));
+    }
+
+
 
     # Check for a password and matching input passwords.
     if (!empty($_POST['pass1'])) {
@@ -46,9 +65,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     # On success register user inserting into 'users' database table.
     if (empty($errors)) {
-        $q = "INSERT INTO new_users (username, email, password) 
-	VALUES ('$fn', '$e', SHA2('$p',256))";
-        $r = @mysqli_query($link, $q);
+        $q = "INSERT INTO new_users (username, email, password, first_name, last_name) 
+	VALUES ('$un', '$e', SHA2('$p',256), '$fn', '$sn')";
+        $r = mysqli_query($link, $q);
         if ($r) {
             echo '
 	<p>You are now registered.</p>
@@ -74,55 +93,75 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration</title>
-</head>
 
 <body>
-    <h2>Register</h2>
-    <form action="register.php" class="was-validated" method="post">
-        <label for="username">Username:</label><br>
-        <input type="text"
-            name="username"
-            placeholder="Username"
-            class="form-control"
-            value="<?php if (isset($_POST['username'])) echo $_POST['username']; ?>"
-            required>
-        <br><br>
-        <label for="email">Email:</label><br>
-        <input type="email"
-            name="email"
-            class="form-control"
-            placeholder="Email"
-            value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>"
-            required><br>
-        <small id="emailHelp" class="form-text text-muted">
-            We'll never share your email with anyone else.
-        </small>
-        <br><br>
-        <label for="password">Password:</label><br>
-        <input type="password"
-            name="pass1"
-            class="form-control"
-            placeholder="Create New Password"
-            value="<?php if (isset($_POST['pass1'])) echo $_POST['pass1']; ?>"
-            required>
-        <br><br>
-        <label for="password">Confirm Password:</label><br>
-        <input type="password"
-            name="pass2"
-            class="form-control"
-            placeholder="Confirm Password"
-            value="<?php if (isset($_POST['pass2'])) echo $_POST['pass2']; ?>"
-            required>
-        <br><br>
-        <input type="submit" value="Submit"></p>
-    </form>
-</body>
+    <div class="container">
+        <h2>Register</h2>
+        <form action="register.php" class="was-validated" method="post">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+                <div class="col">
+                    <div data-mdb-input-init class="form-outline">
+                        <input name="firstname"
+                            placeholder="firstname"
+                            class="form-control"
+                            value="<?php if (isset($_POST['firstname'])) echo $_POST['firstname']; ?>"
+                            required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div data-mdb-input-init class="form-outline">
+                        <input name="surname"
+                            placeholder="surname"
+                            class="form-control"
+                            value="<?php if (isset($_POST['surname'])) echo $_POST['surname']; ?>"
+                            required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div data-mdb-input-init class="form-outline">
+                        <input name="username"
+                            placeholder="username"
+                            class="form-control"
+                            value="<?php if (isset($_POST['username'])) echo $_POST['username']; ?>"
+                            required>
+                    </div>
+                </div>
+            </div>
 
-</html>
+            <!-- Email input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="Email"
+                    value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>"
+                    required><br>
+            </div>
+
+            <!-- Password input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="password"
+                    name="pass1"
+                    class="form-control"
+                    placeholder="Create New Password"
+                    value="<?php if (isset($_POST['pass1'])) echo $_POST['pass1']; ?>"
+                    required>
+            </div>
+
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="password"
+                    name="pass2"
+                    class="form-control"
+                    placeholder="Confirm Password"
+                    value="<?php if (isset($_POST['pass2'])) echo $_POST['pass2']; ?>"
+                    required>
+            </div>
+
+            <!-- Submit button -->
+            <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4" style="background-color: #648381">Sign up</button>
+
+        </form>
+    </div>
+    <?php
+    include('includes/footer.php');
