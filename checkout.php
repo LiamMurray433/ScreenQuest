@@ -1,6 +1,8 @@
 <?php # DISPLAY COMPLETE REGISTRATION PAGE.
 # Access session.
 session_start();
+
+include('includes/nav.php');
 # Redirect if not logged in.
 if (!isset($_SESSION['id'])) {
     require('login_tools.php');
@@ -75,9 +77,11 @@ if (mysqli_num_rows($r) > 0) {
         $month = substr($date, 5, 2);
         $year = substr($date, 0, 4);
         echo '
+        <div class="container">
 		<p>Booking Reference:  #EC1000' . $row['booking_id'] . '</p> 
 		<p>Total Paid:   &pound ' . $row['total'] . ' </p>
 		<p>' . $day . '/' . $month . '/' . $year . '.  <p>
+        </div>
 				
 ';
     }
