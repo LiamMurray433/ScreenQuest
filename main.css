@@ -133,6 +133,30 @@ body {
     justify-content: center;
     flex-direction: row;
     align-items: center;
-    margin: 30px;
+    margin: 20px;
     border-radius: 10px;
+    
+}
+
+.history-container{
+    display: flex;
+    justify-content: center;
+    margin: 50px 30px 0px 30px;
+    color: #EEF0F2;
+    text-decoration: underline;
+}
+
+.booking-card{
+    width: 30%;
+    margin: 10px;
+}
+
+/* mobile phone */
+
+@media screen and (max-width: 1000px) {
+    .booking-container{
+
+        flex-direction: column;
+    }
+
 }

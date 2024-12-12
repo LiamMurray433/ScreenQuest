@@ -97,21 +97,40 @@ if (mysqli_num_rows($r) > 0) {
 require('connect_db.php');
 
 # Retrieve items from 'users' database table.
-$q = "SELECT * FROM movie_booking WHERE id={$_SESSION['id']}
+$q = "SELECT new_users.id, 
+movie_booking.booking_id, 
+movie_booking.total, 
+movie_booking.booking_date, 
+booking_content.content_id, 
+booking_content.movie_id, 
+booking_content.quantity, 
+movie_listings.movie_title  
+FROM new_users
+INNER JOIN movie_booking ON new_users.id = movie_booking.id
+INNER JOIN booking_content ON movie_booking.booking_id = booking_content.booking_id
+INNER JOIN movie_listings ON booking_content.movie_id = movie_listings.movie_id
+WHERE new_users.id = {$_SESSION['id']}
 ORDER BY booking_date DESC";
 $r = mysqli_query($link, $q);
 
+echo '<div class="container history-container">
+        <h3>Booking History</h3>
+        </div>';
 echo '<div class="container py-5 booking-container">';
+
+
+
 
 if (mysqli_num_rows($r) > 0) {
     while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
         echo '
-            <div class="card" style="width: 18rem;">
-             <h1 style="color: #EEF0F2">'  . $row['booking_id'] . ' </h1>
-                <ul class="list-group list-group-light">
-                    <li class="list-group-item px-3">' . $row['total'] . ' </li>
-                    <li class="list-group-item px-3">' . $row['booking_date'] . '</li>
-                </ul>
+            <div class="card text-center booking-card">
+                    <a style="color: #000F08;"  href="movie.php?movie_id=' . $row['movie_id'] . '">'  . $row['movie_title'] . ' </a> 
+                    <ul class="list-group list-group-light" booking-list>
+                        <li class="list-group-item px-3">' . 'Total: '. $row['total'] . ' </li>
+                         <li class="list-group-item px-3">' . 'Qty: ' . $row['quantity'] . ' </li>
+                         <li class="list-group-item px-3">' . 'Date: ' .  $row['booking_date'] . '</li>
+                     </ul>
             </div>';
     }
     # Close database connection.
