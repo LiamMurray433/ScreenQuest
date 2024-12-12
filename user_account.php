@@ -43,7 +43,7 @@ if (mysqli_num_rows($r) > 0) {
 
         echo '	
         <section>
-            <div class="container py-5 account-container" style="background-color: #8A3033;">
+            <div class="container account-container">
              <h1 style="color: #EEF0F2">'  . $row['username'] . ' </h1>
                 <div class="col-lg-8">
                     <div class="card mb-4">
