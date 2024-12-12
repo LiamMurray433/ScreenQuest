@@ -1,3 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CRUD Practice!</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+        crossorigin="anonymous">
+    <!-- Hotjar Tracking Code for https://webdev.edinburghcollege.ac.uk/~HNDCSSA13/ScreenQuest/index.php -->
+        <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:5225364,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+</head>
+
+
+
 <?php
 # Access session.
 session_start();
@@ -8,22 +38,7 @@ include('includes/nav.php');
 # DISPLAY COMPLETE LOGGED IN PAGE.
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>CRUD Practice!</title>
-	<link rel="stylesheet" href="main.css">
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-		integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
-		crossorigin="anonymous">
-</head>
 
 <?php
 # Redirect if not logged in.

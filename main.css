@@ -19,8 +19,8 @@
 
 body {
     font-family: 'Oswald', sans-serif;
-    background-color: #8A3033;
-    color: #000F08;
+    background-color: #000F08;
+    color: #EEF0F2;
     justify-content: center;
     /* Horizontally center */
     align-items: center;
@@ -74,6 +74,13 @@ body {
     /* Smooth transition (optional) */
     transition: color 0.3s;
 
+}
+
+.movie-card{
+    display: flex;
+    width: 20rem;
+    margin: 20px;
+    text-wrap: nowrap;
 }
 
 .login-wrapper {
