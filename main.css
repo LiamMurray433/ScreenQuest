@@ -30,8 +30,8 @@ body {
 .nav-container {
     display: flex;
     justify-content: center;
-    background-color:#8A3033 ;
-    
+    background-color: #8A3033;
+
 }
 
 .custom-navbar {
@@ -100,7 +100,7 @@ body {
     text-align: center;
 }
 
-.carousel-container{
+.carousel-container {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -108,15 +108,16 @@ body {
 }
 
 
-.carousel-container{
+.carousel-container {
     background-color: #000F08;
 }
-#movieCarousel{
+
+#movieCarousel {
     width: 20%;
-    
+
 }
 
-.account-container{
+.account-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -125,4 +126,13 @@ body {
     margin: 20px;
     border-radius: 10px;
     box-shadow: 5px 5px 5px 6px #000F08
+}
+
+.booking-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin: 30px;
+    border-radius: 10px;
 }
