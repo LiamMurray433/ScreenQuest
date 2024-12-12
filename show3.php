@@ -175,7 +175,6 @@ include('includes/filter.php')
             }
         </script>
 </body>
-
 </html>
 
 <?php
