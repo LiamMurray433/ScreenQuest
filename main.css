@@ -76,6 +76,11 @@ body {
 
 }
 
+.custom-movie-listings{
+    padding: 50px;
+    
+}
+
 .movie-card{
     display: flex;
     width: 20rem;
