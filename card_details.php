@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="col">
                     <div data-mdb-input-init class="form-outline">
                         <input name="card_number"
-                            placeholder="card_number"
+                            placeholder="Enter Card Details"
                             class="form-control"
                             value="<?php if (isset($_POST['card_number'])) echo $_POST['card_number']; ?>"
                             required>
@@ -121,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="col">
                     <div data-mdb-input-init class="form-outline">
                         <input name="csv"
-                            placeholder="csv"
+                            placeholder="Enter CSV Number"
                             class="form-control"
                             value="<?php if (isset($_POST['csv'])) echo $_POST['csv']; ?>"
                             required>
@@ -134,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="date"
                     name="expiry_date"
                     class="form-control"
-                    placeholder="Expiry Date"
+                    placeholder="Enter Expiry Date"
                     value="<?php if (isset($_POST['expiry_date'])) echo $_POST['expiry_date']; ?>"
                     required><br>
             </div>

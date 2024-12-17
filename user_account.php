@@ -10,20 +10,10 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
         crossorigin="anonymous">
-    <!-- Hotjar Tracking Code for https://webdev.edinburghcollege.ac.uk/~HNDCSSA13/ScreenQuest/index.php -->
-        <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:5225364,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
-
-
 
 <?php
 ini_set('display_errors', 1);
@@ -107,8 +97,10 @@ if (mysqli_num_rows($r) > 0) {
                 </div>
             </div>
             <div>
-            <a href="update_user.php?id='.$row['id'].'"class="btn btn-secondary btn-block" role="button">Update Details</a>
+            <a href="update_user.php?id='.$row['id'].'"class="btn btn-secondary btn-block" role="button" style="margin: 10px">Update Details</a>
             </div>
+            
+            
         </section>';
     }
     # Close database connection.
@@ -116,6 +108,87 @@ if (mysqli_num_rows($r) > 0) {
 } else {
     echo '<h3>No user details.</h3>';
 }
+
+require('connect_db.php');
+
+# Retrieve card details from payment_details database table.
+$q = "SELECT * FROM payment_details WHERE id={$_SESSION['id']}";
+$r = mysqli_query($link, $q);
+if (mysqli_num_rows($r) > 0) {
+
+    echo '
+
+    <body style="background-color: #000F08;">
+  ';
+
+    while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
+        $date = $row["expiry_date"];
+        $month = substr($date, 5, 2);
+        $year = substr($date, 0, 4);
+        $card_number = $row["card_number"]; 
+        $masked_card_number = "**** **** ****" . substr($card_number, -4);
+
+        echo '	
+        <section>
+            <div class="container account-container">
+             <h1 style="color: #EEF0F2">Card</h1>
+                <div class="col-lg-8">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Name on card</p>
+                            </div>
+                            <div class="col-sm-9">
+                            <p class="text-muted mb-0">' . $row['name_on_card'] . '</div></p>
+                        </div>
+                        <hr>
+                         <div class="row">
+                            <div class="col-sm-3">
+                            <p class="mb-0">Card Number</p>
+                            </div>
+                        <div class="col-sm-9">
+                        <p class="text-muted mb-0">' . $masked_card_number . '</p>
+                        </div>
+                        </div>
+                        <hr>
+                         <div class="row">
+                            <div class="col-sm-3">
+                            <p class="mb-0">CSV</p>
+                            </div>
+                        <div class="col-sm-9">
+                        <p class="text-muted mb-0">***</p>
+                        </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                            <p class="mb-0">Expiry Date</p>
+                            </div>
+                        <div class="col-sm-9">
+                        <p class="text-muted mb-0">' . $month . '/' . $year . '</p>
+                        </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+    
+        </section>';
+    }
+    # Close database connection.
+    mysqli_close($link);
+} else {
+    echo '<div class="container">
+                <h3>No card details.</h3>
+                <div>
+                <a href="card_details.php?id='.$row['id'].'"class="btn btn-secondary btn-block" role="button">Add card details</a>
+                </div>
+            </div>';
+}
+
+
+
 
 require('connect_db.php');
 
