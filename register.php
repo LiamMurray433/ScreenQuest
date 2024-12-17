@@ -64,8 +64,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $sn = mysqli_real_escape_string($link, trim($_POST['surname']));
     }
+        # Check for an name on card:
+        if (empty($_POST['name_on_card'])) {
+        $errors[] = 'Enter name on card';
+        } else {
+        $cardName = mysqli_real_escape_string($link, trim($_POST['name_on_card']));
+        }
 
-
+    # Check for an card number:
+    if (empty($_POST['card_number'])) {
+        $errors[] = 'Enter your card number';
+    } else {
+        $cardNo = mysqli_real_escape_string($link, trim($_POST['card_number']));
+    }
+    # Check for an csv number:
+    if (empty($_POST['csv'])) {
+        $errors[] = 'Enter your csv number';
+    } else {
+        $csv = mysqli_real_escape_string($link, trim($_POST['csv']));
+    }
+    # Check for an expiry date number:
+    if (empty($_POST['expiry_date'])) {
+        $errors[] = 'Enter your expiry date';
+    } else {
+        $date = mysqli_real_escape_string($link, trim($_POST['expiry_date']));
+    }
 
     # Check for a password and matching input passwords.
     if (!empty($_POST['pass1'])) {

@@ -33,7 +33,6 @@ error_reporting(E_ALL);
 session_start();
 # Access session.
 include('includes/nav.php');
-include('includes/filter.php');
 # Redirect if not logged in.
 if (!isset($_SESSION['id'])) {
     require('login_tools.php');
