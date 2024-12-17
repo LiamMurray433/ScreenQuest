@@ -1,33 +1,26 @@
-<footer style="width: 100%; background-color: #8A3033; color: #ecf0f1; padding: 20px 0; text-align: center;">
-    <div style="width: 100%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
-        <div style="flex: 1 1 200px; text-align: left; margin: 10px;">
-            <h4 style="margin: 0; font-size: 18px;">About Us</h4>
-            <p style="margin: 5px 0; font-size: 14px; line-height: 1.5;">
-                We are passionate about bringing the best experiences through technology.
-            </p>
+<footer class="footer-container">
+        <div class="footer-item">
+            <h3>About</h3>
+            <a href="#">FAQS</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Jobs</a>
         </div>
-        <div style="flex: 1 1 200px; text-align: left; margin: 10px;">
-            <h4 style="margin: 0; font-size: 18px;">Quick Links</h4>
-            <ul style="list-style: none; padding: 0; margin: 5px 0; font-size: 14px;">
-                <li><a href="#" style="color: #1abc9c; text-decoration: none;">Home</a></li>
-                <li><a href="#" style="color: #1abc9c; text-decoration: none;">Services</a></li>
-                <li><a href="#" style="color: #1abc9c; text-decoration: none;">Contact</a></li>
-                <li><a href="#" style="color: #1abc9c; text-decoration: none;">Privacy Policy</a></li>
-            </ul>
+        <div class="footer-item">
+            <a href="mailto:webmaster@example.com">
+                <h3>EMAIL US</h3>
+            </a>
         </div>
-        <div style="flex: 1 1 200px; text-align: left; margin: 10px;">
-            <h4 style="margin: 0; font-size: 18px;">Follow Us</h4>
-            <div style="margin: 10px 0;">
-                <a href="#" style="color: #ecf0f1; text-decoration: none; margin-right: 10px;">Facebook</a>
-                <a href="#" style="color: #ecf0f1; text-decoration: none; margin-right: 10px;">Twitter</a>
-                <a href="#" style="color: #ecf0f1; text-decoration: none;">Instagram</a>
+        <div class="footer-item">
+        <h3>Our Socials</h3>
+            <div class="footer-icons">
+                <a class="bi bi-tiktok custom-icon" href="#"></a>
+                <a class="bi bi-instagram custom-icon" href="#"></a>
+                <a class="bi bi-twitter custom-icon" href="#"></a>
+                <a class="bi bi-facebook custom-icon" href="#"></a>
             </div>
         </div>
-    </div>
-    <div style="margin-top: 20px; font-size: 14px;">
-        &copy; 2024 YourCompanyName. All rights reserved.
-    </div>
-</footer>
+    </footer>
+</body>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
