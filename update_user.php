@@ -72,41 +72,44 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?> 
 <html>
-<form action="update_user.php" method="post">
-    <!-- input box for usernam -->
-    <label for="name">Username:</label>
-    <input type="text"
-        name="username"
-        class="form-control"
-        value="<?php if (isset($_POST['username'])) echo $_POST['username']; ?>">
+<div class="container update-form">
+    <form class="update-form-items" action="update_user.php" method="post">
+        <!-- input box for usernam -->
+        <label for="name">Username:</label>
+        <input type="text"
+            name="username"
+            class="form-control"
+            value="<?php if (isset($_POST['username'])) echo $_POST['username']; ?>">
 
-    <!-- input box for email -->
-    <label for="description">Email:</label>
-    <textarea id="email"
-        class="form-control"
-        name="email"
-        value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>">
-	  </textarea>
+        <!-- input box for email -->
+        <label for="description">Email:</label>
+        <input type="text"
+            id="email"
+            class="form-control"
+            name="email"
+            value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>">
+        </input>
 
-    <!-- input box for first name -->
-    <label for="image">First Name:</label>
-    <input type="text"
-        id="first_name"
-        class="form-control"
-        name="first_name"
-        value="<?php if (isset($_POST['first_name'])) echo $_POST['first_name']; ?>">
+        <!-- input box for first name -->
+        <label for="image">First Name:</label>
+        <input type="text"
+            id="first_name"
+            class="form-control"
+            name="first_name"
+            value="<?php if (isset($_POST['first_name'])) echo $_POST['first_name']; ?>">
 
-    <!-- input box for  -->
-    <label for="price">Last Name:</label>
-    <input type="text"
-        id="last_name"
-        class="form-control"
-        name="last_name"
-        value="<?php if (isset($_POST['last_name'])) echo $_POST['last_name']; ?>">
-        <br>
-    <!-- submit button -->
-    <input type="submit" class="btn btn-dark" value="Submit">
-</form>
+        <!-- input box for  -->
+        <label for="price">Last Name:</label>
+        <input type="text"
+            id="last_name"
+            class="form-control"
+            name="last_name"
+            value="<?php if (isset($_POST['last_name'])) echo $_POST['last_name']; ?>">
+            <br>
+        <!-- submit button -->
+        <input type="submit" class="btn btn-dark" style="background-color: #8A3033; margin-top: 10px; width: 30%;" value="Submit">
+    </form>
+</div>
 </html>
 
 <?php
