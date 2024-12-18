@@ -56,9 +56,9 @@ if (mysqli_num_rows($r) == 1) {
 		# Add one more of this product.
 		$_SESSION['cart'][$movie_id]['quantity']++;
 		echo '
-      <div class="container mt-5">
+      <div class="container-lg custom-movie-container" style="background-color: #8A3033;>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-lg-4">
 			  <iframe class="embed-responsive-item" 
 				src=' . $row['preview'] . ' 
 				frameborder="0" 
@@ -87,22 +87,22 @@ if (mysqli_num_rows($r) == 1) {
 		  <hr>
            <div class="card">
             <div class="card-body">
-             <h5 class="card-title">' . $row['theatre'] . '</h5>
+             <h5 class="card-title" style="color: #000F08;">Screen: ' . $row['theatre'] . '</h5>
 			    <a href="show1.php">
 			      <button type="button"
-					class="btn btn-secondary" 
+					class="btn btn-secondary" style="background-color: #8A3033;" 
 					role="button"> Book >  ' . $row['show1'] . ' 
 				  </button>
 				</a>
 			    <a href="show2.php"> 
 				  <button type="button" 
-				    class="btn btn-secondary" 
+				    class="btn btn-secondary" style="background-color: #8A3033;" 
 					role="button"> Book >  ' . $row['show2'] . ' 
 				  </button>
 				</a>
 				<a href="show3.php"> 
 				  <button type="button" 
-				    class="btn btn-secondary" 
+				    class="btn btn-secondary" style="background-color: #8A3033;"  
 					role="button"> Book >  ' . $row['show3'] . ' 
 				  </button>
 				</a>
