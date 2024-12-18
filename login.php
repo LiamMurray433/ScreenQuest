@@ -22,9 +22,9 @@
 include('includes/nav.php');
 
 ?>
-<section class="vh-100" style="background-color: #000F08">
+<section class="vh-100" style="background-color: #000F08" >
     <div class="container py-5 h-100">
-        <form action="login_action.php" method="post">
+        <form style="color: #000F08;" action="login_action.php" method="post">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card shadow-2-strong" style="border-radius: 1rem;">
