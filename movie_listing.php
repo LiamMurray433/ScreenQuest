@@ -30,6 +30,7 @@ $q = "SELECT * FROM movie_listings";
 $r = mysqli_query($link, $q);
 echo '
 <div class="movie-wrapper">
+<h2>Now Showing</h2>
     <div class="row justify-content-center custom-movie-listings" style="background-color:#000F08;">';
     if (mysqli_num_rows($r) > 0) {
         # Display body section.        
@@ -38,8 +39,8 @@ echo '
                     <div class="card movie-card" style="width: 15rem;margin: 10px ">
                         <img src=' . $row['img'] . ' class="card-img-top" alt="T-Shirt">
                         <div class="card-body">
-                            <h5 class="card-title text-center">' . $row['movie_title'] . '</h5>
-                            <a href="movie.php?movie_id=' . $row['movie_id'] . '" class="btn btn-secondary btn-block" role="button">Book Now</a>
+                            <h5 class="card-title text-center" style="color: #000F08";>' . $row['movie_title'] . '</h5>
+                            <a href="movie.php?movie_id=' . $row['movie_id'] . '" class="btn btn-secondary btn-block" style="background-color: #8A3033 " role="button">Book Now</a>
                         </div>
                     </div>       
         ';
