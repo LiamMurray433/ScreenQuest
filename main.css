@@ -22,8 +22,8 @@ body {
     font-family: "Roboto", serif !important;
     font-weight: 400 !important;
     font-style: normal !important;
-    background-color: #000F08;
-    color: #EEF0F2;
+    background-color: #000F08 !important;
+    color: #EEF0F2 !important;
     justify-content: center;
     /* Horizontally center */
     align-items: center;
@@ -79,8 +79,14 @@ body {
 
 }
 
+.movie-wrapper h2{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 .custom-movie-listings{
-    padding: 50px;
+    padding: 30px;
     width: auto;
     
 }
@@ -145,6 +151,10 @@ body {
  
 }
 
+.account-container p{
+    color: #000F08;
+}
+
 .booking-container {
     display: flex;
     justify-content: center;
@@ -171,6 +181,77 @@ body {
     background-color: #8A3033;
 }
 
+.update-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content:start;
+    margin: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+.update-form-items{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 60%;
+    padding: 10px;
+}
+
+.update-form-items label{
+    margin-top: 10px;
+}
+
+#form-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+/* Contact page */
+
+
+.contact-form {
+    width: 55%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #8A3033;
+    color: #EFEFEF;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    padding: 8px 16px;
+}
+
+.social-media-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-color: #8A3033;
+    margin: 20px -60px 0px -60px;
+    border: 2px solid #EFEFEF;
+}
+
+
+
+
+
 
 /* FOOTER */
 
@@ -179,7 +260,7 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    color: #EFEFEF;
+    color: #EEF0F2;
     background-color: #8A3033;
     width: 100%;
     height: 250px;
