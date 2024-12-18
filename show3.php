@@ -24,7 +24,7 @@ include('includes/filter.php')
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" style="color:#000F08;">
         <h1>Booking</h1>
 
         <!--<script src=\"script.js\"></script>-->
@@ -129,7 +129,7 @@ include('includes/filter.php')
 		 
 			<li class="list-group-item">
 			  
-				<a href="checkout.php?total=' . $total . '"><button type="button" class="btn btn-secondary btn-block" role="button">Book Now</button></a>
+				<a href="checkout.php?total=' . $total . '"><button type="button" class="btn btn-dark btn-block" style="background-color: #8A3033;" role="button">Book Now</button></a>
 		      
 			</li>
 		</ul>
