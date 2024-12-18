@@ -139,6 +139,18 @@ body {
 
 }
 
+.custom-movie-container{
+   margin: 20px;
+   padding: 20px;
+   border-radius: 10px;
+   color: #EEF0F2;
+}
+
+iframe {
+    width: 1000px;
+    height: 500px;
+}
+
 .account-container {
     display: flex;
     justify-content: center;
@@ -247,10 +259,6 @@ textarea {
     margin: 20px -60px 0px -60px;
     border: 2px solid #EFEFEF;
 }
-
-
-
-
 
 
 /* FOOTER */
