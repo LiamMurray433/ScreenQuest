@@ -21,6 +21,9 @@
                                 <a class="nav-link" href="coming_soon.php">Coming Soon</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="contact.php">Contact Us</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="login.php">Login</a>
                             </li>
                         </ul>
