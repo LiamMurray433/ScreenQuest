@@ -2,7 +2,7 @@
         <div class="footer-item">
             <h3>About</h3>
             <a href="#">FAQS</a>
-            <a href="#">Contact Us</a>
+            <a href="contact.php">Contact Us</a>
             <a href="#">Jobs</a>
         </div>
         <div class="footer-item">
@@ -13,10 +13,9 @@
         <div class="footer-item">
         <h3>Our Socials</h3>
             <div class="footer-icons">
-                <a class="bi bi-tiktok custom-icon" href="#"></a>
-                <a class="bi bi-instagram custom-icon" href="#"></a>
-                <a class="bi bi-twitter custom-icon" href="#"></a>
-                <a class="bi bi-facebook custom-icon" href="#"></a>
+                <a class="bi bi-instagram custom-icon" href="https://www.instagram.com/"></a>
+                <a class="bi bi-twitter custom-icon" href="https://x.com/?lang=en"></a>
+                <a class="bi bi-facebook custom-icon" href="https://www.facebook.com/"></a>
             </div>
         </div>
     </footer>
