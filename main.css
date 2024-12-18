@@ -174,8 +174,7 @@ iframe {
     align-items: center;
     margin: 20px;
     border-radius: 10px;
-   
-    
+   flex-wrap: wrap;
 }
 
 .history-container{

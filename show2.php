@@ -55,6 +55,12 @@ include('includes/filter.php')
             }
         }
 
+        if (isset($_POST['clear_cart'])) {
+            unset($_SESSION['cart']);
+            header("Location: show1.php"); // Redirect to the same page to refresh the cart.
+            exit();
+        }
+
         # Initialize grand total variable.
         $total = 0;
 
@@ -124,13 +130,16 @@ include('includes/filter.php')
 				<label for="Total" class="col-sm-12 col-form-label">To Pay:  &pound ' . number_format($total, 2) . '</label> 			  
 			  </div>
 			</li>
-		
-		 
 			<li class="list-group-item">
-			  
 				<a href="checkout.php?total=' . $total . '"><button type="button" class="btn btn-dark btn-block" style="background-color: #8A3033;" role="button">Book Now</button></a>
-		      
 			</li>
+            <li class="list-group-item">
+                <form action="show1.php" method="post">
+                <button type="submit" name="clear_cart" class="btn btn-danger btn-block" style="background-color: #dc3545;" role="button">
+                Clear Cart
+                </button>
+            </form>
+            </li>  
 		</ul>
 		
 		</form>
