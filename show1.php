@@ -11,7 +11,7 @@ include('includes/nav.php');
     <meta charset="utf-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CRUD Practice!</title>
+    <title>ScreenQuest</title>
     <link rel="stylesheet" href="main.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet"
@@ -130,12 +130,8 @@ include('includes/nav.php');
 				<label for="Total" class="col-sm-12 col-form-label">To Pay:  &pound ' . number_format($total, 2) . '</label> 			  
 			  </div>
 			</li>
-		
-		 
 			<li class="list-group-item">
-			  
 				<a href="checkout.php?total=' . $total . '"><button type="button" class="btn btn-dark btn-block" style="background-color: #8A3033;" role="button">Book Now</button></a>
-		      
 			</li>
             <li class="list-group-item">
                 <form action="show1.php" method="post">
