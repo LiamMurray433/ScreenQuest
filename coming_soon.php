@@ -30,14 +30,15 @@ $q = "SELECT * FROM coming_soon";
 $r = mysqli_query($link, $q);
 echo '
 <div class="movie-wrapper">
+<h2>Coming Soon</h2>
     <div class="row justify-content-center custom-movie-listings" style="background-color:#000F08;">';
     if (mysqli_num_rows($r) > 0) {
         # Display body section.        
         while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
             echo '
-                    <div class="card movie-card" style="width: 20rem;margin: 10px ">
+                    <div class="card movie-card" style="width: 22rem ;margin: 10px ">
                         <img src=' . $row['img'] . ' class="card-img-top" alt="Movie">
-                        <div class="card-body">
+                        <div class="card-body" style="color: #000F08;">
                             <h5 class="card-title text-center">' . $row['movie_title'] . '</h5>
                             <h5 class="card-title text-center"> Release:' . $row['date'] . '</h5>
                             </div>
