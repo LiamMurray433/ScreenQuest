@@ -19,10 +19,10 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-session_start();
 # Access session.
+session_start();
 include('includes/nav.php');
+include('includes/filter.php');
 # Redirect if not logged in.
 if (!isset($_SESSION['id'])) {
     require('login_tools.php');
@@ -131,7 +131,7 @@ if (mysqli_num_rows($r) > 0) {
         echo '	
         <section>
             <div class="container account-container">
-             <h1 style="color: #EEF0F2">Card</h1>
+             <h1 style="color: #EEF0F2">Card Details</h1>
                 <div class="col-lg-8">
                     <div class="card mb-4">
                         <div class="card-body">
@@ -172,6 +172,9 @@ if (mysqli_num_rows($r) > 0) {
                         <hr>
                     </div>
                 </div>
+            </div>
+                        <div>
+            <a href="update_card.php?id='.$row['id'].'"class="btn btn-secondary btn-block" role="button" style="margin: 10px">Update Card</a>
             </div>
     
         </section>';
@@ -220,7 +223,7 @@ echo '<div class="container py-5 booking-container">';
 if (mysqli_num_rows($r) > 0) {
     while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
         echo '
-            <div class="card text-center booking-card">
+            <div class="card text-center booking-card" style="color: #000F08;">
                     <a style="color: #000F08;"  href="movie.php?movie_id=' . $row['movie_id'] . '">'  . $row['movie_title'] . ' </a> 
                     <ul class="list-group list-group-light" booking-list>
                         <li class="list-group-item px-3">' . 'Total: '. $row['total'] . ' </li>
@@ -236,4 +239,5 @@ if (mysqli_num_rows($r) > 0) {
 }
 echo '
 </div>';
+
 include('includes/footer.php');
